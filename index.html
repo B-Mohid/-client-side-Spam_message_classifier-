@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy-First Spam Checker</title>
+    <!-- Link to the CSS file we will create in Phase 4 -->
+    <link rel="stylesheet" href="/static/css/style.css">
+    <!-- CRITICAL: This line loads the TensorFlow.js library from the web -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Privacy-First Spam Checker</h1>
+        <p>Your message is analyzed entirely in your browser. No data is ever sent to a server.</p>
+        
+        <div class="input-area">
+            <!-- The text area for user input. It has an "id" so our JavaScript can find it. -->
+            <textarea id="message-input" placeholder="Enter or paste an SMS message here..." rows="5"></textarea>
+            <!-- The "Paste" button you requested. -->
+            <button id="paste-btn">Paste</button>
+        </div>
+        
+        <!-- The main button to trigger the analysis. -->
+        <button id="analyze-btn">Analyze Message</button>
+        
+        <!-- This area will display the results of the analysis. -->
+        <div id="result-area">
+            <p id="status">Status: Waiting for input...</p>
+            <div class="confidence-bar-container">
+                <div id="confidence-bar"></div>
+            </div>
+            <p id="confidence-text"></p>
+        </div>
+    </div>
+
+    <!-- CRITICAL: This loads our own JavaScript file AFTER TensorFlow.js is loaded. -->
+    <script src="/static/js/script.js"></script>
+</body>
+</html>
+
